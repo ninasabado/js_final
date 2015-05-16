@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+   	<title>FINAL: mcs2225</title>
+	<script src="angular.js"></script>
+	<script src="app.js"></script>
+  </head>
+
+  <body>
+    <h1>Nina Sabado's Final</h1>
+    <div ng-app="FinalApp" ng-controller="FinalCtrl">
+      
+      <ul>
+        <li ng-repeat="homework in homeworks">
+        	<h3>{{ homework.assignment }}</h3>
+        </li>
+        <div ng-show = "hw.clicked">
+        	<br><b>URL: </b>{{ hw.url }}
+        	<br><b>STATUS: </b>{{ hw.status }}
+        </div>
+      </ul>
+
+    </div>
+  </body>
+
+</html>
