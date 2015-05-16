@@ -1,15 +1,21 @@
 // app.js
 
-var app = angular.module('FinalApp', []);
+var app = angular.module('Finals', []);
 
-app.controller('FinalCtrl', function($scope){
-  $scope.name = "Hello";
-  
+app.controller('FinalCtrl', function($scope, Homework){
+	$scope.homeworks = Homework;
+
+	$scope.show = function(homework){
+		if(homework.clicked)
+			homework.clicked = false;
+		else
+			homework.clicked = true;
+	}
+
 });
 
-/**
-app.factory('Homework', function($http){
-  return{[
+app.factory('Homework', function(){
+  return[
     { assignment: 'Test First JavaScript',
       url: 'https://github.com/ninasabado/FullstackTestFirst',
       status: 'completed',
@@ -21,8 +27,8 @@ app.factory('Homework', function($http){
       clicked: false
     },
     { assignment: 'Final Assessment',
-      url: 'TO DO LATERGRAM',
+      url: 'https://github.com/ninasabado/js_final',
       status: 'completed',
       clicked: false
-    }]
-  }); */
+    }];
+  });
